@@ -1,5 +1,45 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div class="container">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {{#link-to 'index' class="navbar-brand"}}Shalahuddin{{/link-to}}
+      </div>
 
-{{outlet}}
+      <div class="collapse navbar-collapse" id="main-navbar">
+        <ul class="nav navbar-nav">
+              {{#link-to 'pengurus' tagName="li"}}<a href="">Pengurus</a>{{/link-to}}
+        </ul>
+        <ul class="nav navbar-nav">
+              {{#link-to 'anggota' tagName="li"}}<a href="">Anggota</a>{{/link-to}}
+        </ul>
+        <ul class="nav navbar-nav">
+              {{#link-to 'alumni' tagName="li"}}<a href="">Alumni</a>{{/link-to}}
+        </ul>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Management
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <li> <a class="dropdown-item" href="#">
+                       {{#link-to 'user-management' tagName="li"}}<a href="">User</a>{{/link-to}}
+                   </a></li>
+                   <li> <a class="dropdown-item" href="#">
+                       {{#link-to 'user-management' tagName="li"}}<a href="">Role</a>{{/link-to}}
+                   </a></li>
+                </ul>
+                </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+             {{#link-to 'anggota' tagName="li"}}<a href="">Logout</a>{{/link-to}}
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+  {{outlet}}
+</div>
