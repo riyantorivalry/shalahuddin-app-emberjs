@@ -1,0 +1,46 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">{{#link-to 'index'}}<a href="#">Home</a>{{/link-to}}</li>
+    <li class="breadcrumb-item"><a href="#">Alumni</a></li>
+    <li class="breadcrumb-item active" aria-current="page">List</li>
+  </ol>
+</nav>
+{{#link-to 'alumni.add'}}
+<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Add New</button>
+{{/link-to}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nama</th>
+      <th scope="col">Alamat</th>
+      <th scope="col">Kontak</th>
+      <th scope="col">Profesi</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each this.model as |alumni| }}
+    <tr>
+      <td>{{alumni.nama}}</td>
+      <td>{{alumni.alamat}}</td>
+      <td>{{alumni.kontak}}</td>
+      <td>{{alumni.profesi}}</td>
+      <td>
+          {{#link-to 'alumni.edit' alumni}}<button type="button" class="btn btn-link" data-toggle="collapse"><span class="glyphicon glyphicon-pencil"></span></button>{{/link-to}}
+          <button type="button" class="btn btn-link" data-toggle="collapse" ><span class="glyphicon glyphicon-remove"></span></button>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
